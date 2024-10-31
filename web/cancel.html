@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/pay_result.css">
+    <title>sorry for your cancel</title>
+</head>
+<body>
+<div>
+    <p>
+        We are so sorry for your cancellation!<br>
+        If you have any questions, please contact us.<br>
+        <span id="showtime">5</span>s后自动跳到<a href="https://dsvpn.github.io/vpn" style="color: #6559CA;">官网</a>
+    </p>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    var num = 5;
+    var t = null;
+    t = setInterval (function () {
+        num--;
+        $("#showtime").text(num);
+        if(num<=0){
+            clearInterval(t)
+        //    window.location.href = "https://dsvpn.github.io/vpn";
+        }
+    }, 1000);  //反复执行函数本身
+</script>
+</html>

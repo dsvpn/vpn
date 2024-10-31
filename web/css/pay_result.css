@@ -1,0 +1,4 @@
+body{max-width: 750px;margin: 0 auto;background-color: #201B27;color: white;padding: 0 10px;}
+body div h1{font-size: 29px;line-height: 20px;}
+body div p{font-size: 20px;}
+a{text-decoration:none;}
