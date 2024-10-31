@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/pay_result.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <title>Thanks for your order!</title>
+</head>
+<body>
+<div>
+    <h1>Thanks for your order!</h1>
+    <p>
+        Thank you for paying successfully!<br>
+        If you have any questions, please contact us.<br>
+        Your order ID: <span id="orderId"></span><br><br>
+
+        <div style="margin: 0 auto;text-align: center;width: 360px;height: 48px;line-height: 48px;background: #6559CA;border-radius: 5px;">
+            <a style="color: white;font-size: 20px;" href="https://dsvpn.github.io/vpn">官网</a>
+        </div>
+
+    </p>
+</div>
+</body>
+<script type="text/javascript">
+        function getRequestParams() {
+            var str = location.search;
+
+            var theRequest = new Object();
+            if (str.indexOf("?") != -1) {
+                str = str.substr(1);
+                let strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    let arr = strs[i].split("=");
+                    let key = arr[0];
+                    let value = arr.slice(1,).join("=");
+                    theRequest[key]=decodeURIComponent(value);
+                }
+            }
+            return theRequest;
+        }
+        
+        console.log(getRequestParams()["order_id"])
+        $("#orderId").text(getRequestParams()["order_id"])
+</script>
+</html>
