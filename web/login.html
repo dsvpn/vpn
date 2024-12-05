@@ -52,7 +52,6 @@
             </div>
             <div class="footer">
                 <div id="forgot-password">忘记密码?</div>
-                <div id="register">注册新账号</div>
             </div>
         </div>
     </div>
@@ -79,6 +78,8 @@
             $('#register').on('click', function () {
                 location.href = "register.html";
             });
+
+            layui.data('warning',{key:"info",value: 0});
 
             $("#login-password").bind("input propertychange",function(event){
                 let password = $("#login-password").val();
@@ -117,7 +118,7 @@
                     layer.close(loadIndex);
                     if (json.code == 200) {
                         json.data.cache_ts = parseInt(new Date().getTime()/1000);
-                        layui.sessionData('user',{key:"userInfo",value: json.data});
+                        layui.data('user',{key:"userInfo",value: json.data});
                         layui.data('token', {key:"info",value: json.data.token});
 
                         layer.msg('登录成功', {

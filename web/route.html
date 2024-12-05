@@ -3,7 +3,7 @@
     <div class="top">
       
     </div>
-    <div style="padding: 16px 19px 0 19px;color: red;">温馨提示: 您获取到线路后，在到期之前可以一直使用，无需重复获取线路.</div>
+    <div style="padding: 16px 19px 0 19px;color: red;">温馨提示: 中国区AppStore已下架Outline，已经安装Outline的仍可使用，请不要卸载或尽快迁移至袋鼠 VPN IOS客户端<br/><button class="toHelp" style="color: #2468F2;font-weight: bold;">查看下载教程>></button></div>
     <div class="body svip"><ul></ul></div>
     <div class="body vip"><ul></ul></div>
 
@@ -31,8 +31,12 @@
             miniPage = layui.miniPage;
 
     var select = $('div.layuimini-main-route .top').find("button");
-  
 
+
+    $('.layuimini-main-route .toHelp').on('click', function () {
+      let now = parseInt(new Date().getTime()/1000);
+      miniPage.hashChange('help.html?ts='+now);
+    });
     $("div.layuimini-main-route").on('click', 'ul li .route-detail',function () {
       let id = Number($(this).attr("value"));
       let name = $(this).parent().find("span.name").text();
@@ -46,7 +50,7 @@
     });
   
     var routeInfo = layui.sessionData('route_list').info;
-    var userInfo = layui.sessionData('user').userInfo;
+    var userInfo = layui.data('user').userInfo;
 
     var timestamp=parseInt(new Date().getTime()/1000);
 
@@ -153,7 +157,7 @@
         return false;
       }
 
-      var userInfo = layui.sessionData('user').userInfo;
+      var userInfo = layui.data('user').userInfo;
       
         if (userInfo.expire_time<= timestamp){
           layer.msg("VIP时间已到期，请先充值");

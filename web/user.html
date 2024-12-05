@@ -22,7 +22,16 @@
 <!--        <button class="go-buy">开通会员</button>-->
 <!--      </div>-->
       <div class="vip-content">
-        
+        <div class="svip" style="display: none;">
+            <div class="left">
+              <div class="title">
+                <img src="images/icon-no-vip.png"/>
+                <span>SVIP超级会员</span>
+              </div>
+              <div class="time svip-time"><span></span>到期</div>
+            </div>
+            <button class="go-buy">续费</button>
+        </div>
         <div class="vip" style="margin-top: 19px;">
           <div class="left">
             <div class="title">
@@ -33,6 +42,14 @@
           </div>
           <button class="vip-bg go-buy">续费</button>
         </div>
+      </div>
+
+      <div>
+        <div style="font-size: 16px; font-weight: bold;">IOS用户须知</div>
+        *<span style="color: orangered">Outline已在中国区下架</span>，已下载用户目前不影响使用，但需在2025年3月1日前迁移至袋鼠VPN IOS客户端，现在下载赠送15天SVIP时长<br/>
+        *未下载Outline的用户建议AppStore下载袋鼠 VPN IOS客户端（需外区Apple ID下载），享海量线路和7/24技术支持，更有惊喜福利等着你！<br/>
+
+        <button class="toHelp" style="font-weight: bold;color: #2468F2;margin-bottom: 13px;">点此查看下载教程>></button>
       </div>
     </div>
   </div>
@@ -51,7 +68,7 @@
       layui.data('channel',{key:"info",value: request["channel"]});
     }
     
-    var userInfo = layui.sessionData('user').userInfo;
+    var userInfo = layui.data('user').userInfo;
 
     if (userInfo == undefined || userInfo.username == undefined){
       var loadIndex = layer.load(2, {
@@ -83,13 +100,6 @@
         userInfo.vip_expire_time = userInfo.created;
       }
 
-      if(userInfo.expire_time > timestamp){
-        $(".layuimini-main-user .vip-content .vip .title img").attr('src','images/icon-svip.png');
-        $(".layuimini-main-user .vip-content .vip .title span").addClass("font-valid");
-        $(".layuimini-main-user .vip-content .vip .left .time").css('color','#B4731C');
-        $(".layuimini-main-user .vip-content .vip").addClass('valid');
-        $(".layuimini-main-user .vip-content .vip button").addClass('valid');
-      }
       if(userInfo.vip_expire_time > timestamp){
         $(".layuimini-main-user .vip-content .svip .title img").attr('src','images/icon-svip.png');
         $(".layuimini-main-user .vip-content .svip .title span").addClass("font-valid");
@@ -98,7 +108,18 @@
         $(".layuimini-main-user .vip-content .svip button").addClass('valid');
 
         $(".layuimini-main-user .vip-content .vip").hide();
+        $(".layuimini-main-user .vip-content .svip").show();
+      }else if(userInfo.expire_time > timestamp){
+        $(".layuimini-main-user .vip-content .vip .title img").attr('src','images/icon-svip.png');
+        $(".layuimini-main-user .vip-content .vip .title span").addClass("font-valid");
+        $(".layuimini-main-user .vip-content .vip .left .time").css('color','#B4731C');
+        $(".layuimini-main-user .vip-content .vip").addClass('valid');
+        $(".layuimini-main-user .vip-content .vip button").addClass('valid');
+
+        $(".layuimini-main-user .vip-content .svip").hide();
+        $(".layuimini-main-user .vip-content .vip").show();
       }
+
 
 
       $(".layuimini-main-user .body .svip-time span").text(dateUnixFormat(userInfo.vip_expire_time));
@@ -116,13 +137,13 @@
         if (json.code == 200) {
           let timestamp = parseInt(new Date().getTime()/1000);
           json.data.cache_ts = timestamp;
-          layui.sessionData('user',{key:"userInfo",value: json.data});
+          layui.data('user',{key:"userInfo",value: json.data});
           resetUser(json.data);
         } else if(json.code == 4003){
           layer.msg(json.msg, {
             time: 1000
           }, function() {
-            layui.sessionData('user',{key:"userInfo",remove: true})
+            layui.data('user',{key:"userInfo",remove: true})
             window.location = 'login.html';
           });
         }else {
@@ -135,10 +156,13 @@
         layer.msg(e.errorType);
       });
     }
-
+    $('.layuimini-main-user .toHelp').on('click', function () {
+      let now = parseInt(new Date().getTime()/1000);
+      miniPage.hashChange('help.html?ts='+now);
+    });
     $(".layuimini-main-user .logout").on('click', function () {
       layui.data("token",null);
-      layui.sessionData('user',null);
+      layui.data('user',null);
       layui.data('route',null);
 
       layer.msg('退出登录成功', function () {
