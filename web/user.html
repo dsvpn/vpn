@@ -93,6 +93,7 @@
     function resetUser(userInfo){
       let timestamp=parseInt(new Date().getTime()/1000);
 
+      $(".layuimini-main-user .username").text(userInfo.username);
         // $(".layuimini-main-user .body .content").hide();
         $(".layuimini-main-user .body .vip-content").show();
 
