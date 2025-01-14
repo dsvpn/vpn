@@ -6,6 +6,8 @@
 
 **:arrow_double_down: [iOS网页版](https://dsvpn.github.io/vpn/web/login.html?channel=zhaohui)** 
 
+**:arrow_double_down: [Windows 版本.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/daishu%5Bshare%5D-v1.0.4-5.exe)**
+
 **:arrow_double_down: [永久官网（需翻墙访问）](https://www.dsvpn.me)** 
 - - - -
 #### 社交平台账号
