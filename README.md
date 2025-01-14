@@ -8,7 +8,7 @@
 
 **:arrow_double_down: [Windows 版本.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/daishu%5Bshare%5D-v1.0.4-5.exe)**
 
-**:arrow_double_down: [macOS 版本.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/files/daishu-v1.0.4%5Bshare%5D.pkg)**
+**:arrow_double_down: [macOS 版本.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/daishu-v1.0.4%5Bshare%5D.pkg)**
 
 **:arrow_double_down: [永久官网（需翻墙访问）](https://www.dsvpn.me)** 
 - - - -
