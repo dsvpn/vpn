@@ -1,3 +1,4 @@
 file/daishu-v1.7.5-25-share.apk filter=lfs diff=lfs merge=lfs -text
 file/daishu[share]-v1.0.4-5.exe filter=lfs diff=lfs merge=lfs -text
 file/daishu-v1.0.4[share].pkg filter=lfs diff=lfs merge=lfs -text
+file/daishu-v1.8.0-25-share.apk filter=lfs diff=lfs merge=lfs -text
