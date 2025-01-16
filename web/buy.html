@@ -1,7 +1,12 @@
 
 <div class="layuimini-container layuimini-page-anim">
   <div class="layuimini-main-buy">
-    
+    <div class="top">
+      <div class="title">
+        <button class="normal select">普通会员VIP</button>
+        <button class="super">超级会员SVIP</button>
+      </div>
+    </div>
     <div class="desc">
       <div class="normal common" style="display: block;">
         <div class="title">普通会员尊享特权</div>
@@ -15,7 +20,17 @@
           <li><img src="images/icon-bandwidth.png"><span>高速流量50G</span></li>
         </ul>
       </div>
-    
+      <div class="super common" style="display: none;">
+        <div class="title">超级会员尊享特权</div>
+        <ul>
+          <li><img src="images/icon-safe.png"><span>数据安全</span></li>
+          <li><img src="images/icon-dx.png"><span>SVIP独享线路</span></li>
+          <li><img src="images/icon-earth.png"><span>多个出口地区</span></li>
+          <li><img src="images/icon-fast.png"><span>快速上网</span></li>
+          <li><img src="images/icon-js.png"><span>极速音频图片</span></li>
+          <li><img src="images/icon-bandwidth.png"><span>高速流量100G</span></li>
+        </ul>
+      </div>
     </div>
 
     <div class="content">
@@ -23,7 +38,9 @@
       <div class="vip" style="display: block;">
         <ul></ul>
       </div>
-      
+      <div class="svip" style="display: none;">
+        <ul></ul>
+      </div>
     </div>
 
     <div class="payment">
@@ -174,11 +191,13 @@
       if(isSafari > -1){
         winOpen = window.open("","_blank");
       }
+      // var winOpen = window.open("","_blank");
       axios({
         "method": "POST",
         "url": `${API_URL}/order/buy`,
         "data":{"pay_type": payment,"id": postage_id}
       }).then((json) => {
+      
         layer.close(loadIndex);
         layui.data('postage',{key:"buy_ts",value: now+10});
         if (json.code == 200) {
@@ -200,7 +219,7 @@
                   new QRCode(document.getElementById("qrcode"), payUrl);
                 }
               });
-            } else if (isSafari > -1){
+            } else if(isSafari > -1){
               setTimeout(function() {  //这里使用setTimeout非常重要，没有将无法实现
                 //原因是window.open会中断正在执行的进程，这样能保证其它代码执行完成再执行这个。
                 winOpen.location = payUrl; //改变页面的location
@@ -247,6 +266,7 @@
       if (!isReset){
         loadPayment();
         resetPostage(postageInfo.vip_list,false);
+        resetPostage(postageInfo.svip_list,true);
       }
     };
 
@@ -264,6 +284,7 @@
           layui.sessionData('postage',{key:"info",value: json.data});
           if (isReset){
             resetPostage(json.data.vip_list,false);
+            resetPostage(json.data.svip_list,true);
             loadPayment();
           }
         } else if(json.code == 4003){
@@ -386,9 +407,11 @@
         }
       });
 
-      
+      if (isSvip) {
+        $(".layuimini-main-buy .svip ul").html(html);
+      }else {
         $(".layuimini-main-buy .vip ul").html(html);
-    
+      }
     };
 
     function resetPayment(paymentList){
