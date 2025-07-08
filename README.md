@@ -2,7 +2,7 @@
 - - - -
 #### 请在浏览器内打开
 
-**:arrow_double_down: [Android 版本.apk](https://github.com/dsvpn/vpn/raw/main/file/daishu-v1.8.2-26-share.apk)**
+**:arrow_double_down: [Android 版本.apk](https://github.com/dsvpn/vpn/raw/main/file/daishu-v1.8.3.1-27-share.apk)**
 
 **:arrow_double_down: [iOS网页版](https://dsvpn.github.io/vpn/web/login.html?channel=zhaohui)** 
 
