@@ -122,7 +122,7 @@
                 return true;
               }
             });
-            html += `<li id="${item.id}" svip='${isSvip}'><div class="fixed ${useStyle}"></div><div class="route-body"><div><img src="${item.image_url}"><span class="name">${item.name}</span></div><div class="route-detail" value="${item.id}">获取线路</div></div> </li>`;
+            html += `<li id="${item.id}" svip='${isSvip}'><div class="fixed ${useStyle}"></div><div class="route-body"><div><img src="${item.image_url}"><span class="name">${item.name}</span></div><div class="route-detail" value="${item.id}">${item.id==500 ? '重置线路':'获取线路'}</div></div> </li>`;
           }
       });
       
@@ -159,7 +159,7 @@
 
       var userInfo = layui.data('user').userInfo;
       
-        if (userInfo.expire_time<= timestamp){
+        if (userInfo.expire_time<= timestamp && userInfo.vip_expire_time<= timestamp){
           layer.msg("VIP时间已到期，请先充值");
           return  true;
         }
