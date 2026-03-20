@@ -6,7 +6,7 @@
 
 **:arrow_double_down: [iOS网页版](https://dsvpn.github.io/vpn/web/login.html?channel=zhaohui)** 
 
-**:arrow_double_down: [iOS 海外商店版本](https://apps.apple.com/app/id6504493100)**
+**:arrow_double_down: [iOS 海外商店版本](https://dsvpn.github.io/vpn/appstore/index.html)**
 
 **:arrow_double_down: [Windows 版本.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds%5Bshare%5D-v1.0.6-6.exe)**
 
