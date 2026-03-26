@@ -2,19 +2,19 @@
 - - - -
 #### 请在浏览器内打开
 
-**:arrow_double_down: [Android 版本.apk](https://github.com/dsvpn/vpn/raw/main/file/daishu-v1.8.3.1-27-share.apk)**
+**:arrow_double_down: [Android V1.9.0.apk](https://github.com/dsvpn/vpn/raw/main/file/ds-arm64-v8a-V1.9.0-29.apk)**
 
 **:arrow_double_down: [iOS网页版](https://dsvpn.github.io/vpn/web/login.html?channel=zhaohui)** 
 
 **:arrow_double_down: [iOS 海外商店版本](https://dsvpn.github.io/vpn/appstore/index.html)**
 
-**:arrow_double_down: [Windows 版本.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds%5Bshare%5D-v1.0.6-6.exe)**
+**:arrow_double_down: [Windows v1.2.0.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.2.0-7.exe)**
 
-**:arrow_double_down: [macOS 版本.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.0.6%5Bshare%5D.pkg)**
+**:arrow_double_down: [macOS v1.1.6.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.6.pkg)**
 
 **:arrow_double_down: [永久官网（需翻墙访问）](https://www.dsvpn.me)** 
 - - - -
-#### 社交平台账号
+<!-- #### 社交平台账号
 
 **<img src="./image/telegram.png" height=19> [Telegram官方群](https://t.me/dsvpnapp)**
 
@@ -29,4 +29,4 @@
 
 **:e-mail: [官网邮箱（自动回复最新官网）](mailto:001@dsvpn.me)**
 
-**:e-mail: [合作邮箱（商务合作请联系）](mailto:hezuo@dsvpn.me)**
+**:e-mail: [合作邮箱（商务合作请联系）](mailto:hezuo@dsvpn.me)** -->
