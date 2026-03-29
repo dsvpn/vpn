@@ -8,9 +8,9 @@
 
 **:arrow_double_down: [iOS 海外商店版本](https://dsvpn.github.io/vpn/appstore/index.html)**
 
-**:arrow_double_down: [Windows v1.2.0.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.2.0-7.exe)**
+**:arrow_double_down: [Windows v1.3.0.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.3.0-8.exe)**
 
-**:arrow_double_down: [macOS v1.1.6.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.6.pkg)**
+**:arrow_double_down: [macOS v1.1.7.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.7-12.pkg)**
 
 **:arrow_double_down: [永久官网（需翻墙访问）](https://www.dsvpn.me)** 
 - - - -
