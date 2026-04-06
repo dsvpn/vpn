@@ -10,7 +10,7 @@
 
 **:arrow_double_down: [Windows v1.3.0.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.3.0-8.exe)**
 
-**:arrow_double_down: [macOS v1.1.8.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.8-13.pkg)**
+**:arrow_double_down: [macOS v1.1.9.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.9-14.pkg)**
 
 **:arrow_double_down: [永久官网（需翻墙访问）](https://www.dsvpn.me)** 
 - - - -
