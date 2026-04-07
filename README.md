@@ -2,13 +2,13 @@
 - - - -
 #### 请在浏览器内打开
 
-**:arrow_double_down: [Android V1.9.0.apk](https://github.com/dsvpn/vpn/raw/main/file/ds-arm64-v8a-V1.9.0-29.apk)**
+**:arrow_double_down: [Android V2.0.0.apk](https://github.com/dsvpn/vpn/raw/main/file/daishu-v2.0.0-30.apk)**
 
 **:arrow_double_down: [iOS网页版](https://dsvpn.github.io/vpn/web/login.html?channel=zhaohui)** 
 
 **:arrow_double_down: [iOS 海外商店版本](https://dsvpn.github.io/vpn/appstore/index.html)**
 
-**:arrow_double_down: [Windows v1.3.0.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.3.0-8.exe)**
+**:arrow_double_down: [Windows v1.4.0.exe](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/daishu-v1.4.0-9.exe)**
 
 **:arrow_double_down: [macOS v1.1.9.pkg](https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.9-14.pkg)**
 
