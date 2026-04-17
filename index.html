@@ -9,15 +9,6 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="style.css">
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?6e3e8eaa609985c7cd083b0072c409f3";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
 </head>
 <body>
     <div class="container">
@@ -29,11 +20,20 @@
         <section class="content">
             <h2>请选择您的设备下载</h2>
             <div class="download-buttons">
-                <a href="https://github.com/dsvpn/vpn/raw/main/file/daishu-v2.0.0-30.apk" class="button">Android V2.0.0.apk</a>
+                <div class="download-item">
+                    <a href="https://github.com/dsvpn/vpn/raw/main/file/daishu-v2.0.0-30.apk" class="button">Android V2.0.0.apk</a>
+                    <a href="./changelog/android.html" class="changelog-link">查看更新日志</a>
+                </div>
                 <a href="web/login.html?channel=GitHub" class="button">iOS 网页版</a>
                 <a href="https://dsvpn.github.io/vpn/appstore/index.html" class="button">iOS 海外AppStore下载</a>
-                <a href="https://github.com/dsvpn/vpn/raw/refs/heads/main/file/daishu-v1.4.0-9.exe" class="button">Windows v1.4.0.exe</a>
-                <a href="https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.9-14.pkg" class="button">macOS v1.1.9.pkg</a>
+                <div class="download-item">
+                    <a href="https://github.com/dsvpn/vpn/releases/download/ds-latest-exe/ds-V1.6.0-11.exe" class="button">Windows V1.6.0.exe</a>
+                    <a href="./changelog/windows.html" class="changelog-link">查看更新日志</a>
+                </div>
+                <div class="download-item">
+                    <a href="https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.9-14.pkg" class="button">macOS v1.1.9.pkg</a>
+                    <a href="./changelog/macos.html" class="changelog-link">查看更新日志</a>
+                </div>
                 <!-- <a href="https://www.dsvpn.me" class="button">永久官网 (需翻墙访问)</a> -->
             </div>
 
