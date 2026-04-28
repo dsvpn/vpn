@@ -9,8 +9,8 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #201B27;
+    color: #F3EEF9;
     line-height: 1.6;
 }
 
@@ -23,7 +23,7 @@ body, html {
 
 .header h1 {
     font-size: 2.5rem;
-    color: #000000;
+    color: #FFFFFF;
 }
 
 .header p {
@@ -32,7 +32,7 @@ body, html {
 }
 
 .content h2 {
-    color: #333;
+    color: #FFFFFF;
     margin: 20px 0;
 }
 
@@ -45,7 +45,7 @@ body, html {
 
 .button, .email-button {
     display: inline-block;
-    background: #ECC47C;
+    background: #6559CA;
     color: #ffffff;
     padding: 10px 30px; 
     width: 100%;
@@ -58,19 +58,19 @@ body, html {
 }
 
 .button:hover, .email-button:hover {
-    background-color: #ca9a5c;
+    background-color: #5448b8;
 }
 
 .changelog-link {
     display: block;
     margin-bottom: 10px;
-    color: #666;
+    color: #d2cae6;
     text-decoration: none;
     font-size: 0.95rem;
 }
 
 .changelog-link:hover {
-    color: #333;
+    color: #FFFFFF;
     text-decoration: underline;
 }
 
@@ -88,9 +88,9 @@ body, html {
 .footer {
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #4b4357;
     font-size: 0.8rem;
-    color: #666;
+    color: #d2cae6;
 }
 
 @media (min-width: 768px) {

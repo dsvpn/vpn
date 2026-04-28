@@ -1,4 +1,3 @@
-## 袋鼠VPN，又快又好用的VPN！ #
 - - - -
 #### 请在浏览器内打开
 
@@ -12,5 +11,4 @@
 
 **:arrow_double_down: [macOS v1.2.2.pkg](https://github.com/dsvpn/vpn/releases/download/ds-latest-pkg/ds-v1.2.2-17.pkg)**
 
-**:arrow_double_down: [永久官网（需翻墙访问）](https://www.dsvpn.me)** 
 - - - -

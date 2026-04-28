@@ -9,30 +9,232 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .content {
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        .content h2 {
+            margin-bottom: 18px;
+            letter-spacing: 0.04em;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .download-item {
+            margin: 0;
+        }
+
+        .download-card {
+            --accent: #8c7bff;
+            --accent-soft: rgba(140, 123, 255, 0.24);
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 18px 18px 18px 22px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05)),
+                rgba(255, 255, 255, 0.02);
+            box-shadow: 0 18px 42px rgba(5, 3, 12, 0.34);
+            text-decoration: none;
+            overflow: hidden;
+            transition:
+                transform 0.22s ease,
+                border-color 0.22s ease,
+                box-shadow 0.22s ease,
+                background 0.22s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .download-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 5px;
+            background: linear-gradient(180deg, var(--accent), transparent 88%);
+        }
+
+        .download-card::after {
+            content: "";
+            position: absolute;
+            inset: auto -30px -42px auto;
+            width: 126px;
+            height: 126px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+            pointer-events: none;
+        }
+
+        .download-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.18);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08)),
+                rgba(255, 255, 255, 0.03);
+            box-shadow: 0 24px 58px rgba(5, 3, 12, 0.44);
+        }
+
+        .download-card__body {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            min-width: 0;
+            text-align: left;
+        }
+
+        .download-card__badge {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 0 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #dbd4ff;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .download-card__title {
+            display: block;
+            margin-top: 10px;
+            color: #ffffff;
+            font-size: 1.06rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .download-card__meta {
+            display: block;
+            margin-top: 4px;
+            color: #c9c1e6;
+            font-size: 0.82rem;
+            line-height: 1.45;
+        }
+
+        .download-card__cta {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 78px;
+            min-height: 42px;
+            padding: 0 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .download-card--android {
+            --accent: #51d393;
+            --accent-soft: rgba(81, 211, 147, 0.24);
+        }
+
+        .download-card--ios-web {
+            --accent: #58b8ff;
+            --accent-soft: rgba(88, 184, 255, 0.22);
+        }
+
+        .download-card--ios-store {
+            --accent: #ffb45d;
+            --accent-soft: rgba(255, 180, 93, 0.22);
+        }
+
+        .download-card--windows {
+            --accent: #8b80ff;
+            --accent-soft: rgba(139, 128, 255, 0.22);
+        }
+
+        .download-card--macos {
+            --accent: #cf7eff;
+            --accent-soft: rgba(207, 126, 255, 0.22);
+        }
+
+        @media (max-width: 480px) {
+            .download-card {
+                padding: 16px 28px;
+                border-radius: 20px;
+            }
+
+            .download-card__cta {
+                min-width: 70px;
+                padding: 0 12px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- <header class="header">
-            <h1>袋鼠VPN</h1>
-            <p>又快又好用的VPN!</p>
-        </header> -->
         
         <section class="content">
             <h2>请选择您的设备下载</h2>
             <div class="download-buttons">
                 <div class="download-item">
-                    <a href="#" class="button" id="android-download">Android v2.0.0.apk</a>
-                    <!-- <a href="./changelog/android.html" class="changelog-link">查看更新日志</a> -->
+                    <a href="#" class="download-card download-card--android" id="android-download">
+                        <span class="download-card__body">
+                            <span class="download-card__badge" id="android-download-badge">ANDROID</span>
+                            <span class="download-card__title" id="android-download-title">Android</span>
+                            <span class="download-card__meta" id="android-download-meta">APK 安装包 | v2.0.0.apk</span>
+                        </span>
+                        <span class="download-card__cta" id="android-download-cta">下载</span>
+                    </a>
                 </div>
-                <a href="#" class="button" id="ios-web-download">iOS 网页版</a>
-                <a href="#" class="button" id="ios-appstore-download">iOS 海外AppStore下载</a>
                 <div class="download-item">
-                    <a href="#" class="button" id="windows-download">Windows V1.6.0.exe</a>
-                    <!-- <a href="./changelog/windows.html" class="changelog-link">查看更新日志</a> -->
+                    <a href="#" class="download-card download-card--ios-web" id="ios-web-download">
+                        <span class="download-card__body">
+                            <span class="download-card__badge" id="ios-web-download-badge">WEB</span>
+                            <span class="download-card__title" id="ios-web-download-title">iOS 网页版</span>
+                            <span class="download-card__meta" id="ios-web-download-meta">浏览器直达 | 登录即可使用</span>
+                        </span>
+                        <span class="download-card__cta" id="ios-web-download-cta">前往</span>
+                    </a>
                 </div>
                 <div class="download-item">
-                    <a href="#" class="button" id="macos-download">macOS v1.2.2.pkg</a>
-                    <!-- <a href="./changelog/macos.html" class="changelog-link">查看更新日志</a> -->
+                    <a href="#" class="download-card download-card--ios-store" id="ios-appstore-download">
+                        <span class="download-card__body">
+                            <span class="download-card__badge" id="ios-appstore-download-badge">STORE</span>
+                            <span class="download-card__title" id="ios-appstore-download-title">iOS 海外AppStore下载</span>
+                            <span class="download-card__meta" id="ios-appstore-download-meta">海外 Apple ID | 商店下载安装</span>
+                        </span>
+                        <span class="download-card__cta" id="ios-appstore-download-cta">打开</span>
+                    </a>
+                </div>
+                <div class="download-item">
+                    <a href="#" class="download-card download-card--windows" id="windows-download">
+                        <span class="download-card__body">
+                            <span class="download-card__badge" id="windows-download-badge">DESKTOP</span>
+                            <span class="download-card__title" id="windows-download-title">Windows</span>
+                            <span class="download-card__meta" id="windows-download-meta">桌面客户端 | V1.6.0.exe</span>
+                        </span>
+                        <span class="download-card__cta" id="windows-download-cta">下载</span>
+                    </a>
+                </div>
+                <div class="download-item">
+                    <a href="#" class="download-card download-card--macos" id="macos-download">
+                        <span class="download-card__body">
+                            <span class="download-card__badge" id="macos-download-badge">DESKTOP</span>
+                            <span class="download-card__title" id="macos-download-title">macOS</span>
+                            <span class="download-card__meta" id="macos-download-meta">桌面客户端 | v1.2.2.pkg</span>
+                        </span>
+                        <span class="download-card__cta" id="macos-download-cta">下载</span>
+                    </a>
                 </div>
                 
             </div>
@@ -47,32 +249,51 @@
                     url: "https://github.com/dsvpn/vpn/releases/download/daishu-latest-apk/daishu-v2.0.0-30.apk",
                     version: "v2.0.0",
                     extension: "apk",
-                    label: "Android"
+                    label: "Android",
+                    badge: "ANDROID",
+                    metaPrefix: "APK 安装包",
+                    action: "下载"
                 },
                 windows: {
                     url: "https://github.com/dsvpn/vpn/releases/download/ds-latest-exe/ds-V1.6.0-11.exe",
                     version: "V1.6.0",
                     extension: "exe",
-                    label: "Windows"
+                    label: "Windows",
+                    badge: "DESKTOP",
+                    metaPrefix: "桌面客户端",
+                    action: "下载"
                 },
                 macos: {
                     url: "https://github.com/dsvpn/vpn/releases/download/ds-latest-pkg/ds-v1.2.2-17.pkg",
                     version: "v1.2.2",
                     extension: "pkg",
-                    label: "macOS"
+                    label: "macOS",
+                    badge: "DESKTOP",
+                    metaPrefix: "桌面客户端",
+                    action: "下载"
                 },
                 "ios-web": {
                     url: "web/login.html?channel=GitHub",
-                    label: "iOS 网页版"
+                    label: "iOS 网页版",
+                    badge: "WEB",
+                    meta: "浏览器直达 | 登录即可使用",
+                    action: "前往"
                 },
                 "ios-appstore": {
                     url: "appstore/index.html",
-                    label: "iOS 海外AppStore下载"
+                    label: "iOS 海外AppStore下载",
+                    badge: "STORE",
+                    meta: "海外 Apple ID | 商店下载安装",
+                    action: "打开"
                 }
             };
 
             function applyDownloadTarget(elementId, targetKey) {
                 var element = document.getElementById(elementId);
+                var badge = document.getElementById(elementId + "-badge");
+                var title = document.getElementById(elementId + "-title");
+                var meta = document.getElementById(elementId + "-meta");
+                var cta = document.getElementById(elementId + "-cta");
                 var target = platformTargets[targetKey];
 
                 if (!element || !target) {
@@ -80,9 +301,24 @@
                 }
 
                 element.href = target.url;
-                element.textContent = target.version
-                    ? target.label + " " + target.version + "." + target.extension
-                    : target.label;
+
+                if (badge && target.badge) {
+                    badge.textContent = target.badge;
+                }
+
+                if (title && target.label) {
+                    title.textContent = target.label;
+                }
+
+                if (meta) {
+                    meta.textContent = target.version
+                        ? target.metaPrefix + " | " + target.version + "." + target.extension
+                        : target.meta;
+                }
+
+                if (cta && target.action) {
+                    cta.textContent = target.action;
+                }
             }
 
             applyDownloadTarget("android-download", "android");
