@@ -9,46 +9,88 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="style.css">
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?6e3e8eaa609985c7cd083b0072c409f3";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <!-- <header class="header">
             <h1>袋鼠VPN</h1>
             <p>又快又好用的VPN!</p>
-        </header>
+        </header> -->
         
         <section class="content">
             <h2>请选择您的设备下载</h2>
             <div class="download-buttons">
-                <a href="https://github.com/dsvpn/vpn/raw/main/file/daishu-v2.0.0-30.apk" class="button">Android V2.0.0.apk</a>
-                <a href="web/login.html?channel=GitHub" class="button">iOS 网页版</a>
-                <a href="https://dsvpn.github.io/vpn/appstore/index.html" class="button">iOS 海外AppStore下载</a>
-                <a href="https://github.com/dsvpn/vpn/raw/refs/heads/main/file/daishu-v1.4.0-9.exe" class="button">Windows v1.4.0.exe</a>
-                <a href="https://github.com/dsvpn/vpn/raw/refs/heads/main/file/ds-v1.1.9-14.pkg" class="button">macOS v1.1.9.pkg</a>
-                <!-- <a href="https://www.dsvpn.me" class="button">永久官网 (需翻墙访问)</a> -->
+                <div class="download-item">
+                    <a href="#" class="button" id="android-download">Android v2.0.0.apk</a>
+                    <!-- <a href="./changelog/android.html" class="changelog-link">查看更新日志</a> -->
+                </div>
+                <a href="#" class="button" id="ios-web-download">iOS 网页版</a>
+                <a href="#" class="button" id="ios-appstore-download">iOS 海外AppStore下载</a>
+                <div class="download-item">
+                    <a href="#" class="button" id="windows-download">Windows V1.6.0.exe</a>
+                    <!-- <a href="./changelog/windows.html" class="changelog-link">查看更新日志</a> -->
+                </div>
+                <div class="download-item">
+                    <a href="#" class="button" id="macos-download">macOS v1.2.2.pkg</a>
+                    <!-- <a href="./changelog/macos.html" class="changelog-link">查看更新日志</a> -->
+                </div>
+                
             </div>
 
-            <!-- <div class="contact-info">
-                <h2>联系方式</h2>
-                <p>遇到问题？请通过以下方式联系我们：</p>
-                <a href="mailto:001@dsvpn.me" class="button">官网邮箱（自动回复最新官网）001@dsvpn.me</a>
-                <div><a href="mailto:hezuo@dsvpn.me" class="button">合作邮箱（商务合作请联系）hezuo@dsvpn.me</a></div>
-                <div><a href="https://t.me/dsvpnapp" class="button">Telegram官方群 </a></div>
-            </div> -->
         </section>
-        
-        <!-- <footer class="footer">
-            <p>&copy; 2024 DSVPN. All Rights Reserved.</p>
-        </footer> -->
+
     </div>
+    <script>
+        (function () {
+            var platformTargets = {
+                android: {
+                    url: "https://github.com/dsvpn/vpn/releases/download/daishu-latest-apk/daishu-v2.0.0-30.apk",
+                    version: "v2.0.0",
+                    extension: "apk",
+                    label: "Android"
+                },
+                windows: {
+                    url: "https://github.com/dsvpn/vpn/releases/download/ds-latest-exe/ds-V1.6.0-11.exe",
+                    version: "V1.6.0",
+                    extension: "exe",
+                    label: "Windows"
+                },
+                macos: {
+                    url: "https://github.com/dsvpn/vpn/releases/download/ds-latest-pkg/ds-v1.2.2-17.pkg",
+                    version: "v1.2.2",
+                    extension: "pkg",
+                    label: "macOS"
+                },
+                "ios-web": {
+                    url: "web/login.html?channel=GitHub",
+                    label: "iOS 网页版"
+                },
+                "ios-appstore": {
+                    url: "appstore/index.html",
+                    label: "iOS 海外AppStore下载"
+                }
+            };
+
+            function applyDownloadTarget(elementId, targetKey) {
+                var element = document.getElementById(elementId);
+                var target = platformTargets[targetKey];
+
+                if (!element || !target) {
+                    return;
+                }
+
+                element.href = target.url;
+                element.textContent = target.version
+                    ? target.label + " " + target.version + "." + target.extension
+                    : target.label;
+            }
+
+            applyDownloadTarget("android-download", "android");
+            applyDownloadTarget("ios-web-download", "ios-web");
+            applyDownloadTarget("ios-appstore-download", "ios-appstore");
+            applyDownloadTarget("windows-download", "windows");
+            applyDownloadTarget("macos-download", "macos");
+        })();
+    </script>
 </body>
 </html>

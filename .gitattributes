@@ -1,3 +1,0 @@
-file/daishu-v2.0.0-30.apk filter=lfs diff=lfs merge=lfs -text
-file/ds-v1.1.9-14.pkg filter=lfs diff=lfs merge=lfs -text
-file/daishu-v1.4.0-9.exe filter=lfs diff=lfs merge=lfs -text
